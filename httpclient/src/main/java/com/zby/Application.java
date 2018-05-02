@@ -33,6 +33,9 @@ public class Application {
 		for (Iterator<Request> iterator = requests.iterator(); iterator.hasNext();) {
 			Request request = iterator.next();
 			if (request.getExecute() != null && SKIP_SIGN.equals(request.getExecute())) {
+				System.out.println("Ignore sign " + SKIP_SIGN);
+				System.out.println(request);
+				System.out.println(SEPRATOR_LINE);
 				continue;
 			}
 			String hostToUse = request.getHost() == null ? basehost : request.getHost();
