@@ -1,0 +1,44 @@
+/* "execute": "#"代表不执行当前的请求，""代表执行当前请求 */
+{
+	"baseHost": "localhost",
+	"basePort": 8083,
+	"basePath": "/zl/app/repay",
+	"defaultMethod": "post",
+	"requests": [
+		{
+			"execute": "*",
+			"path": "/createPreOrder",
+			"method": "post",
+			"headers": {
+				"v": "2.0.5"
+			},
+			"params": {
+				"loanNo": "201711220000109218",
+				"idNo": "410824197905302533",
+				"billAmount": 99.99,
+				"repayType": 1,
+				"version": "1.0",
+				"payAccountNo": "33333333",
+				"payOpenBankCode":"102"
+			},
+			"jsonData": {
+				"loanNo": "201711220000109218",
+				"idNo": "410824197905302533",
+				"billAmount": 99.99,
+				"repayType": 1,
+				"version": "1.0",
+				"payAccountNo": "33333333",
+				"payOpenBankCode":"102"
+			}
+		},
+		{
+			"execute": "*",
+			"path": "/confirmPayOrder",
+			"params": {
+				"reserverId": "80384",
+				"phone": "18381669542",
+				"code": "1234"
+			}
+		}
+	]
+}
