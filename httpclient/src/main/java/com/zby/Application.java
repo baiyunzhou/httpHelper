@@ -14,6 +14,7 @@ public class Application {
 	private static final String DEFAULT_HOST = "localhost";
 	private static final Integer DEFAULT_PORT = 8080;
 	private static final String DEFAULT_METHOD = "GET";
+	private static final String SEPRATOR_LINE = "----------^^^^^----------华丽丽的分隔符----------^^^^^----------";
 
 	public static void main(String[] args) throws Exception {
 		String jsonPath = "";
@@ -42,6 +43,8 @@ public class Application {
 			if (method.equalsIgnoreCase("POST")) {
 				if (null != request.getParams() && null != request.getJsonData()) {
 					System.out.println("Not support both params and jsonData attribute!");
+					System.out.println(request);
+					System.out.println(SEPRATOR_LINE);
 					continue;
 				}
 				if (null != request.getParams()) {
@@ -56,7 +59,7 @@ public class Application {
 				continue;
 			}
 			if (iterator.hasNext()) {
-				System.out.println("----------^^^^^----------华丽丽的分隔符----------^^^^^----------");
+				System.out.println(SEPRATOR_LINE);
 			}
 		}
 	}
